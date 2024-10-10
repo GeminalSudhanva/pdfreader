@@ -64,8 +64,8 @@ function getPageText(pageNum, pdf) {
 }
 
 function renderPage(pageNum, pdf, pdfViewer) {
+    const scale = window.innerWidth < 768 ? 1 : 1.5;  // Adjust scale based on screen size
     return pdf.getPage(pageNum).then(function(page) {
-        const scale = 1.5;
         const viewport = page.getViewport({ scale: scale });
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
@@ -99,7 +99,7 @@ function performOCR(pdf, pdfViewer) {
 
 function performOCROnPage(pageNum, pdf) {
     return pdf.getPage(pageNum).then(function(page) {
-        const scale = 1.5;
+        const scale = window.innerWidth < 768 ? 1 : 1.5;
         const viewport = page.getViewport({ scale: scale });
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
