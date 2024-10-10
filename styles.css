@@ -86,3 +86,34 @@ button:hover {
 .page {
     margin-bottom: 20px;
 }
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+    #pdfViewer {
+        height: 50vh; /* Adjusted for smaller screen */
+    }
+}
